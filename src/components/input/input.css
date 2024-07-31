@@ -1,0 +1,41 @@
+.underlineInputWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.underlineInputWrap > input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  border-radius: 0px;
+  color: var(--color);
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--background);
+  transition: var(--transition);
+  margin: 0px;
+  padding: 0px 5px;
+}
+
+.underlineInputWrap > input:focus {
+  outline: none;
+}
+
+.underlineInputWrap > input:focus:first-of-type + p {
+  background: linear-gradient(var(--hover-color), var(--hover-color)) bottom / 100% 100% no-repeat var(--background-300);
+}
+
+.underlineInputWrap > p {
+  position: absolute;
+  background: linear-gradient(var(--hover-color), var(--hover-color)) bottom / 0% 100% no-repeat var(--background-300);
+  height: 2px;
+  width: 100%;
+  transition: var(--transition);
+  bottom: 0px;
+  margin: 0px;
+  padding: 0px;
+}

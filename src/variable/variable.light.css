@@ -1,0 +1,19 @@
+:root {
+  --header-background: rgb(255, 255, 255, 0.8);
+  --card-background: #fff;
+  --background: #ffffff;
+  --background-100: #eee;
+  --background-200: #ddd;
+  --background-300: #ccc;
+  --background-400: #bbb;
+  --background-500: #aaa;
+  --color: #111;
+  --color-100: #111;
+  --color-200: #222;
+  --color-300: #333;
+  --color-400: #444;
+  --color-500: #555;
+  --hover-color: #0064FF;
+  --border-color: #d0d7deb3;
+  --button-disabled: rgb(170, 170, 170, 0.2);
+}

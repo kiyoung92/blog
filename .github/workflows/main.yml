@@ -1,0 +1,40 @@
+name: Deploy Blog
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: run
+    runs-on: [self-hosted, Linux, x64]
+
+    if: contains(github.event.head_commit.message, 'ci:')
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v2
+
+      - name: Remove existing container
+        run: |
+          if [ "$(docker ps -q -f name=blog)" ]; then
+              docker rm -f blog
+          fi
+
+      - name: Docker Build image
+        run: |
+          docker build -t blog .
+
+      - name: Docker Run
+        run: |
+          docker run -d --name blog -p 8080:3000 blog
+
+      - name: Send Success Message
+        if: success()
+        run: |
+          curl -s --data "text=✨ BLOG Deploy Success%0A%0A☀️ Commit message%0A${{ github.event.commits[0].message }}%0A%0A😎 See changes%0Ahttps://github.com/${{ github.repository }}/commit/${{github.sha}}" --data "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" 'https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage' >/dev/null
+
+      - name: Send Fail Message
+        if: failure()
+        run: |
+          curl -s --data "text=💥 BLOG Deploy Fail%0A%0A🌧️ Commit message%0A${{ github.event.commits[0].message }}%0A%0A🧐 Check%0Ahttps://github.com/${{ github.repository }}/commit/${{github.sha}}" --data "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" 'https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage' >/dev/null

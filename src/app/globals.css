@@ -1,33 +1,101 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url(../variable/variable.css);
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: var(--background);
+  color: var(--color-100)
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+main {
+  margin-top: 60px;
+  width: 1024px;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+  line-height: 20px;
+}
+
+a {
+  color: var(--color-100);
+  text-decoration: none;
+}
+
+.padding-y-10 {
+  padding: 10px 0px;
+}
+
+
+@media only screen and (max-width: 1060px) {
+  main {
+    width: calc(100% - 40px) !important;
   }
+
+  header {
+    width: calc(100% - 20px) !important;
+  }
+
+  .padding-y-10 {
+    padding: 5px 0px !important;
+  }
+
+  .posts-item-wrap {
+    padding: 10px !important;
+  }
+
+  .post-image-wrap {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .markdown-body {
+    padding: 20px 0px !important;
+  }
+
+  .sign-up-contents-wrap {
+    width: 100% !important;
+  }
+}
+
+pre {
+  position: relative !important;
+  display: flex !important;
+  margin-bottom: 5px !important;
+}
+
+code.language-javascript,
+code.language-typescript,
+code.language-sql,
+code.language-c,
+code.language-css,
+code.language-scss,
+code.language-shell,
+code.language-python,
+code.language-powershell,
+code.language-xml,
+code.language-bash,
+code.language-json,
+code.language-plaintext {
+  padding-right: 40px !important;
+  line-height: 26px !important;
+}
+
+button:disabled {
+  background: var(--button-disabled);
+  color: var(--button-disabled);
+  /* opacity: 0.2; */
 }

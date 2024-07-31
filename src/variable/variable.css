@@ -1,0 +1,15 @@
+@import url(./variable.light.css) screen and (prefers-color-scheme: light);
+@import url(./variable.dark.css) screen and (prefers-color-scheme: dark);
+@import url(./github.min.css) screen and (prefers-color-scheme: light);
+@import url(./github-dark.min.css) screen and (prefers-color-scheme: dark);
+@import url(../variable/github-markdown.css);
+
+:root {
+  --main-padding: 0px 20px;
+  --header-padding: 0px 20px;
+  --footer-padding: 0px 20px;
+  --text-bold: bold;
+  --cursor: pointer;
+  --transition: 0.3s all ease;
+  --danger: #E0234E;
+}

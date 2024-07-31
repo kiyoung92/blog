@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+## Build Local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+
+pnpm start:local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br><br><br>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+pnpm install
 
-## Learn More
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+<br><br><br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 사용법
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`posts` 폴더에 블로그 게시물을 작성할 폴더를 만들고 `index.md` 파일을 작성해 주세요.
 
-## Deploy on Vercel
+첫번째 이미지 파일이 대표 이미지로 사용됩니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br><br><br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## dark & light mode
+
+사용자 기기의 `prefers-color-scheme`을 확인하여 자동으로 다크모드, 라이트 모드로 전환됩니다.
