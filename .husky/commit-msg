@@ -1,0 +1,6 @@
+commit_message=$(cat "$1")
+if ! echo "$commit_message" | grep -qE "^(feat|fix|docs|style|refactor|test|chore): .+$"; then
+  echo "Error: Commit message must follow the convention 'type: description'."
+  echo "Allowed types: feat, fix, docs, style, refactor, test, chore."
+  exit 1
+fi
