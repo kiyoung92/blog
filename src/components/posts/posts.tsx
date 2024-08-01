@@ -43,7 +43,7 @@ export default function Posts({ list }: { list: Post[] }) {
                     </div>
                     <div className="padding-y-10">
                       <p className="post-item-date">
-                        {new Date(postData.date).toLocaleDateString()}
+                        {new Date(postData.date).toLocaleDateString('ko-KR')}
                       </p>
                     </div>
                   </div>

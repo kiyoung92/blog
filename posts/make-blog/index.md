@@ -82,7 +82,7 @@ for (const file of postDir) {
 response.sort((a, b) => b.createdAt - a.createdAt);
 response.forEach((item, index) => {
   item.id = index + 1;
-  item.createdAt = new Date(item.createdAt).toLocaleDateString();
+  item.createdAt = new Date(item.createdAt).toLocaleDateString('ko-KR');
 });
 ````
 
