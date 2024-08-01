@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://blog.joselogs.com/images/title-image.png',
-        width: 1200,
-        height: 1200,
+        width: 960,
+        height: 960,
         alt: 'Joselogs',
       },
     ],
