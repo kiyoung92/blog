@@ -19,6 +19,17 @@ body {
   color: var(--color-100);
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  background: var(--header-background);
+  z-index: 999;
+}
+
 main {
   margin-top: 60px;
   width: 1024px;
@@ -93,4 +104,19 @@ button:disabled {
   background: var(--button-disabled);
   color: var(--button-disabled);
   /* opacity: 0.2; */
+}
+
+.code-copy-button {
+  margin-left: -26px;
+  width: 26px;
+  height: 26px;
+  position: sticky;
+  left: calc(100% - 26px);
+  padding: 0px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: 0.3s all ease-in-out;
+  border-radius: 5px;
+  flex: none !important;
 }

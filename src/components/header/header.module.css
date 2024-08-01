@@ -1,0 +1,20 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1024px;
+  padding: 0px 20px;
+}
+
+.logo {
+  transition: 0.3s all ease-in-out;
+}
+
+.logo:hover {
+  color: var(--hover-color);
+}
+
+.githubLink {
+  width: 30px;
+  height: 30px;
+}

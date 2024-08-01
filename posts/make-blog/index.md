@@ -5,9 +5,7 @@ description: 'NestJS로 만드는 블로그'
 tags: ['javascript', 'typescript', 'react', 'nextjs']
 ---
 
-![Github_Logo](make-blog/index.png)
-
-# 블로그 만들기
+![Github_Logo](./index.png)
 
 NextJS로 블로그를 만들었다.
 

@@ -1,4 +1,4 @@
-.basic-button {
+.basicButton {
   background: var(--hover-color);
   position: relative;
   border: none;
@@ -15,7 +15,7 @@
   transition: 0.2s all ease-in-out;
 }
 
-.loading-icon {
+.lodingIcon {
   width: 20px;
   height: 20px;
   border-top: 3px solid var(--hover-color);

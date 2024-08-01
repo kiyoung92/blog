@@ -1,12 +1,11 @@
 'use client';
 
-import '@/components/header/header.css';
-
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import GithubIconDark from '@/assets/images/github-mark.svg';
 import GithubIconLight from '@/assets/images/github-mark-white.svg';
+import headerStyles from '@/components/header/header.module.css';
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
@@ -43,12 +42,12 @@ export default function Header() {
 
   return (
     <header style={{ top: showHeader ? '0' : '-60px', transition: 'top 0.3s' }}>
-      <div className="header-wrap">
+      <div className={headerStyles.wrap}>
         <Link href="/">
-          <h2 className="header-logo">Joselogs</h2>
+          <h2 className={headerStyles.logo}>Joselogs</h2>
         </Link>
         <Link
-          className="header-github-log-link"
+          className={headerStyles.githubLink}
           target="_blank"
           href="https://github.com/kiyoung92"
         >

@@ -1,5 +1,4 @@
-import './input.css';
-
+import inputStyles from '@components/input/input.module.css';
 import { BaseSyntheticEvent } from 'react';
 
 export default function UnderlineInput({
@@ -18,7 +17,7 @@ export default function UnderlineInput({
   disabled: boolean;
 }) {
   return (
-    <div className="underlineInputWrap">
+    <div className={inputStyles.wrap}>
       <input
         type={type}
         placeholder={placeholder}

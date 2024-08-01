@@ -1,4 +1,4 @@
-import './button.css';
+import buttonStyles from '@/components/button/button.module.css';
 
 export default function Button({
   title,
@@ -14,11 +14,11 @@ export default function Button({
   return (
     <button
       type="button"
-      className="basic-button"
+      className={buttonStyles.basicButton}
       disabled={loading ? true : disabled}
       onClick={onClick}
     >
-      {loading ? <span className="loading-icon" /> : title}
+      {loading ? <span className={buttonStyles.loadingIcon} /> : title}
     </button>
   );
 }

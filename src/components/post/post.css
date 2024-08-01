@@ -3,33 +3,4 @@
   min-width: 200px;
   max-width: 1024px;
   margin: 0 auto;
-  /* padding: 50px 0px; */
-  /* padding: 45px; */
 }
-
-.code-copy-button {
-  margin-left: -26px;
-  width: 26px;
-  height: 26px;
-  position: sticky;
-  left: calc(100% - 26px);
-  padding: 0px;
-  cursor: pointer;
-  border: none;
-  background: none;
-  transition: 0.3s all ease-in-out;
-  border-radius: 5px;
-  flex: none !important;
-}
-
-.code-copy-button:hover {
-  background-color: var(--background-500);
-}
-
-
-
-/* @media (max-width < 760px) {
-  .markdown-body {
-    width: 100%;
-  }
-} */

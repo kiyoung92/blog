@@ -59,10 +59,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 export default async function Page({ params }: Params) {
   const html = await getPostData(params.title);
+  const metadata = extractMetadata({ markdownData: html });
+  const metadataJson = metadata
+    ? parseMetadataToJson({ metadata })
+    : {
+        title: 'Joselogs',
+        description: '기록하기',
+      };
 
   return (
     <main>
-      <Post html={html} />
+      <Post html={html} title={metadataJson?.title} />
     </main>
   );
 }

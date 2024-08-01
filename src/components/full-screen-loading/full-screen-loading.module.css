@@ -1,4 +1,4 @@
-.full-screen-loading-wrap {
+.wrap {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -9,7 +9,7 @@
   height: 100%;
 }
 
-.full-screen-loading {
+.loading {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -20,9 +20,9 @@
   animation: rotation 1s linear infinite;
   opacity: 0.8;
 }
-.full-screen-loading::after {
+.loading::after {
   opacity: 0.8;
-  content: '';  
+  content: '';
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -41,4 +41,4 @@
   100% {
     transform: rotate(360deg);
   }
-} 
+}
