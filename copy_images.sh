@@ -17,9 +17,12 @@ for blog_dir in "$POSTS_DIR"/*; do
     mkdir -p "$target_dir"
 
     # 블로그 타이틀 폴더 내의 이미지 파일을 public/posts/블로그타이틀 폴더로 복사
-    for image_file in "$blog_dir"/*.{png,jpg,jpeg,gif}; do
-      if [ -f "$image_file" ]; then
-        cp "$image_file" "$target_dir"
+    for image_file in "$blog_dir"/*; do
+      if [[ "$image_file" == *.png || "$image_file" == *.jpg || "$image_file" == *.jpeg || "$image_file" == *.gif ]]; then
+        if [ -f "$image_file" ]; then
+          echo "Copying $image_file to $target_dir"
+          cp "$image_file" "$target_dir"
+        fi
       fi
     done
 
