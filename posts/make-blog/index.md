@@ -5,6 +5,8 @@ description: '자바스크립트의 몇 가지 배경지식을 알아보자'
 tags: ['javascript']
 ---
 
+![Github_Logo](make-blog/index.png)
+
 # 블로그 만들기
 
 NextJS로 블로그를 만들었다.

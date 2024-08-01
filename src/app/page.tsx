@@ -1,26 +1,12 @@
 import { promises as fs } from 'fs';
-import yaml from 'js-yaml';
 
 import Information from '@/components/information/information';
 import Posts from '@/components/posts/posts';
-
-function extractMetadata(markdownData: string): string | null {
-  const match = markdownData.match(/---\s*([\s\S]*?)\s*---/);
-  return match ? match[1].trim() : null;
-}
-
-function parseMetadataToJson(metadata: string): Record<string, string> | null {
-  try {
-    return yaml.load(metadata) as Record<string, string>;
-  } catch (e) {
-    return null;
-  }
-}
-
-function extractFirstImagePath(markdownData: string): string | null {
-  const match = markdownData.match(/!\[.*?\]\((.*?)\)/);
-  return match ? match[1] : null;
-}
+import {
+  extractFirstImagePath,
+  extractMetadata,
+  parseMetadataToJson,
+} from '@/lib/parser/metadate.parser';
 
 export default async function Home() {
   const postsDirName = 'posts';
@@ -33,9 +19,9 @@ export default async function Home() {
           encoding: 'utf-8',
         },
       );
-      const metadata = extractMetadata(markdownData);
-      const metadataJson = metadata ? parseMetadataToJson(metadata) : null;
-      const firstImagePath = extractFirstImagePath(markdownData);
+      const metadata = extractMetadata({ markdownData });
+      const metadataJson = metadata ? parseMetadataToJson({ metadata }) : null;
+      const firstImagePath = extractFirstImagePath({ markdownData });
 
       if (!metadataJson) {
         return null;
