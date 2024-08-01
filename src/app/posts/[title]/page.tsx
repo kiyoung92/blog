@@ -33,11 +33,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       };
   const firstImagePath = extractFirstImagePath({ markdownData });
 
+  // TODO: add keywords, author, twitter, languages
   return {
-    title: metadataJson?.title,
+    title: `${metadataJson?.title}`,
     description: metadataJson?.description,
     alternates: {
-      canonical: `/posts/${params.title}`,
+      canonical: `https://blog.joselogs.com/`,
     },
     openGraph: {
       title: metadataJson?.title,
@@ -52,7 +53,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
           alt: metadataJson?.title,
         },
       ],
-      url: `/posts/${params.title}`,
     },
   };
 }
