@@ -25,7 +25,12 @@ export type Params = {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const markdownData = await getPostData(params.title);
   const metadata = extractMetadata({ markdownData });
-  const metadataJson = metadata ? parseMetadataToJson({ metadata }) : null;
+  const metadataJson = metadata
+    ? parseMetadataToJson({ metadata })
+    : {
+        title: 'Joselogs',
+        description: '기록하기',
+      };
   const firstImagePath = extractFirstImagePath({ markdownData });
 
   return {
