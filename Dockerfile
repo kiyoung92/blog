@@ -24,6 +24,8 @@ RUN ls ./public
 
 RUN ls ./public/posts
 
+RUN ls ./public/posts/make-blog
+
 RUN pnpm run build
 
 EXPOSE 3000
