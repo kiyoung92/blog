@@ -16,7 +16,13 @@ COPY . .
 
 RUN ls
 
+RUN ls ./public
+
 RUN /bin/sh ./copy_images.sh
+
+RUN ls ./public
+
+RUN ls ./public/posts
 
 RUN pnpm run build
 
