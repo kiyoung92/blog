@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # posts 폴더 경로
-POSTS_DIR="/usr/src/app/posts"
+POSTS_DIR="./posts"
 # public/images 폴더 경로
-PUBLIC_IMAGES_DIR="/usr/src/app/public/posts"
+PUBLIC_IMAGES_DIR="./public/posts"
 
 # posts 폴더 내의 각 블로그 타이틀 폴더를 순회
 for blog_dir in "$POSTS_DIR"/*; do
@@ -13,7 +13,7 @@ for blog_dir in "$POSTS_DIR"/*; do
     # 블로그 타이틀에 해당하는 public/posts 폴더 경로
     target_dir="$PUBLIC_IMAGES_DIR/$blog_title"
 
-    # public/images/블로그타이틀 폴더가 존재하지 않으면 생성
+    # public/posts/블로그타이틀 폴더가 존재하지 않으면 생성
     mkdir -p "$target_dir"
 
     # 블로그 타이틀 폴더 내의 이미지 파일을 public/posts/블로그타이틀 폴더로 복사

@@ -8,13 +8,15 @@ COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm install
 
-COPY copy_images.sh /usr/src/app/copy_images.sh
+COPY copy_images.sh ./copy_images.sh
 
-RUN chmod +x /usr/src/app/copy_images.sh
+RUN chmod +x ./copy_images.sh
 
 COPY . .
 
-RUN /bin/sh /usr/src/app/copy_images.sh
+RUN ls
+
+RUN /bin/sh ./copy_images.sh
 
 RUN pnpm run build
 
