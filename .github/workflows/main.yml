@@ -27,7 +27,7 @@ jobs:
 
       - name: Docker Run
         run: |
-          docker run -d --name blog -p 8080:3000 blog
+          docker run -d --name blog -p ${{ secrets.DOCKER_PORT }} -v ${{ secrets.DOCKER_VOLUME }} blog
 
       - name: Send Success Message
         if: success()

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # posts 폴더 경로
-POSTS_DIR="./posts"
+POSTS_DIR="/usr/src/app/posts"
 # public/images 폴더 경로
-PUBLIC_IMAGES_DIR="./public/posts"
+PUBLIC_IMAGES_DIR="/usr/src/app/public/posts"
 
 # posts 폴더 내의 각 블로그 타이틀 폴더를 순회
 for blog_dir in "$POSTS_DIR"/*; do
