@@ -34,6 +34,7 @@ export default async function Home() {
         titleImagePath: firstImagePath ? `/posts/${firstImagePath}` : null,
         description: metadataJson?.description,
         date: metadataJson?.date,
+        tags: metadataJson?.tags,
       };
     }),
   );

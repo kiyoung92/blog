@@ -1,5 +1,7 @@
 'use client';
 
+import '@/components/markdown/markdown.css';
+
 import DOMPurify from 'dompurify';
 import hljs from 'highlight.js/lib/core';
 import bash from 'highlight.js/lib/languages/bash';
@@ -15,9 +17,11 @@ import shell from 'highlight.js/lib/languages/shell';
 import sql from 'highlight.js/lib/languages/sql';
 import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import reactHtmlParser from 'react-html-parser';
 import rehypeRaw from 'rehype-raw';
+import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
@@ -25,6 +29,8 @@ import remarkHtml from 'remark-html';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
+
+import { getToc } from '@/lib/markdown';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('typescript', typescript);
@@ -42,6 +48,8 @@ hljs.registerLanguage('plaintext', plaintext);
 
 export default function Markdown({ propsMarkdown }: { propsMarkdown: string }) {
   const [html, setHtml] = useState('');
+  // const [toc, setToc] = useState([]);
+  const toc = getToc({ content: propsMarkdown });
 
   useEffect(() => {
     async function markdownToHtml() {
@@ -51,6 +59,7 @@ export default function Markdown({ propsMarkdown }: { propsMarkdown: string }) {
         .use(remarkRehype, {
           allowDangerousHtml: true,
         })
+        .use(rehypeSlug)
         .use(rehypeRaw)
         .use(remarkFrontmatter)
         .use(rehypeStringify)
@@ -108,5 +117,23 @@ export default function Markdown({ propsMarkdown }: { propsMarkdown: string }) {
     addClickEvent();
   }, [html, propsMarkdown]);
 
-  return <div>{reactHtmlParser(html)}</div>;
+  return (
+    <div className="markdown-wrap">
+      <div className="markdown-content-wrap">{reactHtmlParser(html)}</div>
+      <div className="markdown-toc-wrap">
+        {toc?.map((item) => (
+          <Link key={item.id} href={`#${item.link.toLowerCase()}`}>
+            <p
+              className="markdown-toc-content"
+              style={{
+                marginLeft: `${(item.indent - 1) * 20}px`,
+              }}
+            >
+              {item.text}
+            </p>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 }

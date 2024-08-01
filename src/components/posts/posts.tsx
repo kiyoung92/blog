@@ -10,6 +10,7 @@ type Post = {
   description: string;
   folderPath: string;
   date: string;
+  tags: string[] | null;
 } | null;
 
 export default function Posts({ list }: { list: Post[] }) {
@@ -41,10 +42,15 @@ export default function Posts({ list }: { list: Post[] }) {
                         {postData.description}
                       </p>
                     </div>
-                    <div className="padding-y-10">
+                    <div className="posts-date-tags-wrap">
                       <p className="post-item-date">
                         {new Date(postData.date).toLocaleDateString('ko-KR')}
                       </p>
+                      <div className="posts-tags-wrap">
+                        {postData?.tags?.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   {postData.titleImagePath && (

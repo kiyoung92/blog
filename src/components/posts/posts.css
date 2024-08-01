@@ -47,3 +47,22 @@
   font-size: 12px;
   color: var(--color-400);
 }
+.posts-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.posts-tags-wrap span {
+  border-radius: 5px;
+  padding: 5px 8px;
+  background-color: var(--background-200);
+}
+
+.posts-date-tags-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}

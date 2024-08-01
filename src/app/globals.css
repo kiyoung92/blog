@@ -50,9 +50,37 @@ a {
   padding: 10px 0px;
 }
 
+@media only screen and (max-width: 1620px) {
+  .markdown-toc-wrap {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  main {
+    width: 1024px;
+  }
+
+  header {
+    width: 1024px;
+  }
+
+  header > div {
+    padding: 0px !important;
+  }
+}
+
 @media only screen and (max-width: 1060px) {
   main {
     width: calc(100% - 40px) !important;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header > div {
+    padding: 0px 20px !important;
   }
 
   .padding-y-10 {
@@ -74,6 +102,10 @@ a {
 
   .sign-up-contents-wrap {
     width: 100% !important;
+  }
+
+  .posts-tags-wrap {
+    display: none !important;
   }
 }
 

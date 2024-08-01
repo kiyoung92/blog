@@ -5,7 +5,7 @@ description: 'NestJS로 만드는 블로그'
 tags: ['javascript', 'typescript', 'react', 'nextjs']
 ---
 
-![Github_Logo](./index.png)
+![Github_Logo](make-blog/index.png)
 
 NextJS로 블로그를 만들었다.
 
@@ -25,7 +25,7 @@ NextJS로 블로그를 만들었다.
 
 <br><br><br>
 
-## 1. 파일을 읽고 랜더링하기 좋게 리스트로 만들자.
+# 1. 파일을 읽고 랜더링하기 좋게 리스트로 만들자.
 
 메인 페이지에 리스트를 만들어주기 위해서 `fs` 모듈을 사용하였다.
 

@@ -65,11 +65,12 @@ export default async function Page({ params }: Params) {
     : {
         title: 'Joselogs',
         description: '기록하기',
+        tags: [],
       };
 
   return (
     <main>
-      <Post html={html} title={metadataJson?.title} />
+      <Post html={html} title={metadataJson?.title} tags={metadataJson?.tags} />
     </main>
   );
 }

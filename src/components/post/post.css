@@ -4,3 +4,17 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+
+.post-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.post-tags-wrap span {
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: var(--background-200);
+}
