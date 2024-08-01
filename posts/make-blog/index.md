@@ -1,8 +1,8 @@
 ---
-title: '블로그만들기'
+title: '블로그 만들기'
 date: '2023-08-21T00:00:10Z'
-description: '자바스크립트의 몇 가지 배경지식을 알아보자'
-tags: ['javascript']
+description: 'NestJS로 만드는 블로그'
+tags: ['javascript', 'typescript', 'react', 'nextjs']
 ---
 
 ![Github_Logo](make-blog/index.png)

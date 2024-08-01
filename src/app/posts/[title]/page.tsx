@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: metadataJson?.title,
       description: metadataJson?.description,
       images: [
-        `https://blog.joselogs.com/${firstImagePath}` ||
+        `https://blog.joselogs.com/posts/${firstImagePath}` ||
           'https://blog.joselogs.com/images/title-image.png',
       ],
       url: `/posts/${params.title}`,

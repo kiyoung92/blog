@@ -14,17 +14,7 @@ RUN chmod +x ./copy_images.sh
 
 COPY . .
 
-RUN ls
-
-RUN ls ./public
-
 RUN /bin/sh ./copy_images.sh
-
-RUN ls ./public
-
-RUN ls ./public/posts
-
-RUN ls ./public/posts/make-blog
 
 RUN pnpm run build
 
