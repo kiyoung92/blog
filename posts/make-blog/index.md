@@ -1,6 +1,5 @@
 ---
 title: 'NextJS로 블로그 만들기'
-2024-08-02T08:35:41.033Z
 date: '2024-08-02T08:35:41.033Z'
 description: 'NextJS로 만드는 블로그'
 tags: ['Typescript', 'NextJS']
