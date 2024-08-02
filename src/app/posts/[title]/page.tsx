@@ -1,4 +1,5 @@
-import { promises as fs } from 'fs';
+// import { promises as fs } from 'fs';
+import fs from 'fs';
 import { Metadata } from 'next';
 
 import Post from '@/components/post/post';
@@ -8,9 +9,9 @@ import {
   parseMetadataToJson,
 } from '@/lib/parser/metadate.parser';
 
-async function getPostData(postTitle: string) {
+function getPostData(postTitle: string) {
   const postsDirName = `posts/${decodeURIComponent(postTitle)}/index.md`;
-  const postData = await fs.readFile(postsDirName, { encoding: 'utf-8' });
+  const postData = fs.readFileSync(postsDirName, { encoding: 'utf-8' });
 
   return postData;
 }
@@ -22,8 +23,8 @@ export type Params = {
   };
 };
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const markdownData = await getPostData(params.title);
+export function generateMetadata({ params }: Params): Metadata {
+  const markdownData = getPostData(params.title);
   const metadata = extractMetadata({ markdownData });
   const metadataJson = metadata
     ? parseMetadataToJson({ metadata })
@@ -57,8 +58,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Params) {
-  const html = await getPostData(params.title);
+export default function Page({ params }: Params) {
+  const html = getPostData(params.title);
   const metadata = extractMetadata({ markdownData: html });
   const metadataJson = metadata
     ? parseMetadataToJson({ metadata })

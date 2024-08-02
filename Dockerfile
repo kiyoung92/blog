@@ -12,9 +12,11 @@ COPY copy_images.sh ./copy_images.sh
 
 RUN chmod +x ./copy_images.sh
 
-COPY . .
+RUN pnpm rss
 
 RUN /bin/sh ./copy_images.sh
+
+COPY . .
 
 RUN pnpm run build
 

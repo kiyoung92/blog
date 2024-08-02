@@ -10,6 +10,7 @@ type Post = {
   description: string;
   folderPath: string;
   date: string;
+  url: string;
   tags: string[] | null;
 } | null;
 

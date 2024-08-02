@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://blog.joselogs.com
+
+# Sitemaps
+Sitemap: https://blog.joselogs.com/sitemap.xml
