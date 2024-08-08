@@ -18,3 +18,9 @@
   width: 30px;
   height: 30px;
 }
+
+.titleWrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

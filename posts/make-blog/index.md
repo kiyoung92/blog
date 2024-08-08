@@ -1,11 +1,11 @@
 ---
-title: 'NextJS로 블로그 만들기'
+title: 'Test Blog'
 date: '2024-08-02T08:35:41.033Z'
-description: 'NextJS로 만드는 블로그'
+description: '블로그 테스트 중 입니다.'
 tags: ['Typescript', 'NextJS']
 ---
 
-![Github_Logo](make-blog/index.png)
+![Github_Logo](./index.png)
 
 NextJS로 블로그를 만들었다.
 

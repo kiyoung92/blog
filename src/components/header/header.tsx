@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -43,7 +44,13 @@ export default function Header() {
   return (
     <header style={{ top: showHeader ? '0' : '-60px', transition: 'top 0.3s' }}>
       <div className={headerStyles.wrap}>
-        <Link href="/">
+        <Link href="/" className={headerStyles.titleWrap}>
+          <Image
+            src="/images/title-image.png"
+            alt="메인 이미지"
+            width={30}
+            height={30}
+          />
           <h2 className={headerStyles.logo}>Joselogs</h2>
         </Link>
         <Link
