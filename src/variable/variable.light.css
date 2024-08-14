@@ -3,10 +3,11 @@
   --card-background: #fff;
   --background: #ffffff;
   --background-100: #eee;
-  --background-200: #ddd;
+  --background-200: #dddddd;
   --background-300: #ccc;
   --background-400: #bbb;
   --background-500: #aaa;
+  --background-200-opacity: rgb(221, 221, 221, 0.9);
   --color: #111;
   --color-100: #111;
   --color-200: #222;

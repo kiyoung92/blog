@@ -5,7 +5,7 @@ description: '블로그 테스트 중 입니다.'
 tags: ['Typescript', 'NextJS']
 ---
 
-![Github_Logo](./index.png)
+![Github_Logo](make-blog/index.png)
 
 NextJS로 블로그를 만들었다.
 
