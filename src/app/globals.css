@@ -90,7 +90,12 @@ a {
     padding: 10px !important;
   }
 
-  .post-image-wrap {
+  .contents-item-wrap {
+    padding: 10px !important;
+  }
+
+  .post-image-wrap,
+  .content-image-wrap {
     width: 100px !important;
     height: 100px !important;
   }

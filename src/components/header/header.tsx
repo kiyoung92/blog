@@ -160,15 +160,15 @@ export default function Header() {
             ),
           )}
         </div>
-        <Link
-          className={headerStyles.githubWrap}
-          target="_blank"
-          href="https://github.com/kiyoung92"
-        >
-          <div className={headerStyles.githubLink}>
+        <div className={headerStyles.githubWrap}>
+          <Link
+            className={headerStyles.githubLink}
+            target="_blank"
+            href="https://github.com/kiyoung92"
+          >
             {isDarkMode ? <GithubIconLight /> : <GithubIconDark />}
-          </div>
-        </Link>
+          </Link>
+        </div>
         <div
           className={`${headerStyles.dropdownWrap} ${isActive && headerStyles.activeDropdownWrap}`}
           role="button"

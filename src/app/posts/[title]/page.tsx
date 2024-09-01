@@ -36,7 +36,7 @@ export function generateMetadata({ params }: Params): Metadata {
 
   // TODO: add keywords, author, twitter, languages
   return {
-    title: `${metadataJson?.title}`,
+    title: `Joselogs | ${metadataJson?.title}`,
     description: metadataJson?.description,
     alternates: {
       canonical: `https://blog.joselogs.com/`,

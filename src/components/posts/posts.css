@@ -37,6 +37,9 @@
   width: 120px;
   border-radius: 5px;
   overflow: hidden;
+  flex: none;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .post-image-wrap > img {
