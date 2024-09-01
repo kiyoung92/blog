@@ -95,51 +95,70 @@ export default function Header() {
           <h2 className={headerStyles.logo}>Joselogs</h2>
         </Link>
         <div className={headerStyles.contentsWrap}>
-          {contentsList.map((content) => (
-            <Link
-              className={headerStyles.content}
-              href={content.link}
-              key={content.id}
-            >
+          {contentsList.map((content) =>
+            pathname === content.link ? (
               <div
-                className={`${headerStyles.iconWrap} ${content.title === 'POSTS' ? headerStyles.postsAnimate : headerStyles.contentsAnimate}`}
+                className={`${headerStyles.content} ${headerStyles.action}`}
+                key={content.id}
               >
-                {content.title === 'POSTS' ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="100%"
-                    viewBox="0 -960 960 960"
-                    width="100%"
-                    // fill="#00bfff"
-                  >
-                    <path d="M280-140v-480q0-25.06 17.5-42.53Q315-680 340-680h480q24.75 0 42.38 17.62Q880-644.75 880-620v340L680-80H340q-24.75 0-42.37-17.63Q280-115.25 280-140ZM81-725q-5-25 9.5-44.5T130-794l473-84q25-5 44.5 9t24.5 39l16 90h-60l-14-79-473 83 79 450v83q-20-2-35-15t-19-34L81-725Zm259 105v480h308v-172h172v-308H340Zm240 240Z" />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="100%"
-                    viewBox="0 -960 960 960"
-                    width="100%"
-                    // fill="#00bfff"
-                  >
-                    <path d="M480-480q0-91 64.5-155.5T700-700q91 0 155.5 64.5T920-480H480ZM260-260q-91 0-155.5-64.5T40-480h440q0 91-64.5 155.5T260-260Zm220-220q-91 0-155.5-64.5T260-700q0-91 64.5-155.5T480-920v440Zm0 440v-440q91 0 155.5 64.5T700-260q0 91-64.5 155.5T480-40Z" />
-                  </svg>
-                )}
+                <div
+                  className={`${headerStyles.iconWrap} ${content.title === 'POSTS' ? headerStyles.postsAnimate : headerStyles.contentsAnimate}`}
+                >
+                  {content.title === 'POSTS' ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="100%"
+                      viewBox="0 -960 960 960"
+                      width="100%"
+                    >
+                      <path d="M280-140v-480q0-25.06 17.5-42.53Q315-680 340-680h480q24.75 0 42.38 17.62Q880-644.75 880-620v340L680-80H340q-24.75 0-42.37-17.63Q280-115.25 280-140ZM81-725q-5-25 9.5-44.5T130-794l473-84q25-5 44.5 9t24.5 39l16 90h-60l-14-79-473 83 79 450v83q-20-2-35-15t-19-34L81-725Zm259 105v480h308v-172h172v-308H340Zm240 240Z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="100%"
+                      viewBox="0 -960 960 960"
+                      width="100%"
+                    >
+                      <path d="M480-480q0-91 64.5-155.5T700-700q91 0 155.5 64.5T920-480H480ZM260-260q-91 0-155.5-64.5T40-480h440q0 91-64.5 155.5T260-260Zm220-220q-91 0-155.5-64.5T260-700q0-91 64.5-155.5T480-920v440Zm0 440v-440q91 0 155.5 64.5T700-260q0 91-64.5 155.5T480-40Z" />
+                    </svg>
+                  )}
+                </div>
+                <p>{content.title}</p>
               </div>
-              {/* <Image
-                className={
-                  content.title === 'POSTS'
-                    ? headerStyles.postsAnimate
-                    : headerStyles.contentsAnimate
-                }
-                src={content.imagePath}
-                width={16}
-                height={16}
-                alt="헤더 포스트"
-              /> */}
-              <p>{content.title}</p>
-            </Link>
-          ))}
+            ) : (
+              <Link
+                className={headerStyles.content}
+                href={content.link}
+                key={content.id}
+              >
+                <div
+                  className={`${headerStyles.iconWrap} ${content.title === 'POSTS' ? headerStyles.postsAnimate : headerStyles.contentsAnimate}`}
+                >
+                  {content.title === 'POSTS' ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="100%"
+                      viewBox="0 -960 960 960"
+                      width="100%"
+                    >
+                      <path d="M280-140v-480q0-25.06 17.5-42.53Q315-680 340-680h480q24.75 0 42.38 17.62Q880-644.75 880-620v340L680-80H340q-24.75 0-42.37-17.63Q280-115.25 280-140ZM81-725q-5-25 9.5-44.5T130-794l473-84q25-5 44.5 9t24.5 39l16 90h-60l-14-79-473 83 79 450v83q-20-2-35-15t-19-34L81-725Zm259 105v480h308v-172h172v-308H340Zm240 240Z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="100%"
+                      viewBox="0 -960 960 960"
+                      width="100%"
+                    >
+                      <path d="M480-480q0-91 64.5-155.5T700-700q91 0 155.5 64.5T920-480H480ZM260-260q-91 0-155.5-64.5T40-480h440q0 91-64.5 155.5T260-260Zm220-220q-91 0-155.5-64.5T260-700q0-91 64.5-155.5T480-920v440Zm0 440v-440q91 0 155.5 64.5T700-260q0 91-64.5 155.5T480-40Z" />
+                    </svg>
+                  )}
+                </div>
+                <p>{content.title}</p>
+              </Link>
+            ),
+          )}
         </div>
         <Link
           className={headerStyles.githubWrap}

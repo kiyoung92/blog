@@ -50,6 +50,19 @@
   gap: 3px;
 }
 
+.content.action {
+  color: var(--color) !important;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.content.action svg {
+  fill: var(--color) !important;
+}
+
 .content:hover {
   color: var(--color);
 }
